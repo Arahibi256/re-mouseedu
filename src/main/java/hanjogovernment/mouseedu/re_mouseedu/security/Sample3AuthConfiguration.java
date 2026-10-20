@@ -20,7 +20,7 @@ public class Sample3AuthConfiguration {
             .logoutUrl("/logout")
             .logoutSuccessUrl("/")) // ログアウト後に / にリダイレクト
         .authorizeHttpRequests(authz -> authz
-            .requestMatchers("/sample4/**").authenticated()
+            .requestMatchers("/").authenticated()
             .anyRequest().permitAll()); // 上記以外は全員アクセス可能
     return http.build();
   }
